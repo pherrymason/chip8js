@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Chip8</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css" media="all">
+        <style>
+			body{
+				padding: 20px;
+			}
+	        canvas{
+	        	display : block;
+	        	background : #FFF;
+	        	width  : calc(64px*5);
+	        	height : calc(32px*5);
+
+	        /*	margin : 0 auto;*/
+	        }
+
+	        tr.current{
+	        	color : #FF0000;
+	        }
+
+	        .program{
+	        	max-height:550px;
+	        	height    : 300px;
+	        	overflow-y:scroll;
+	        }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-sm-8">
+		    	<canvas id="screen" width="320" height="160"></canvas>
+		    </div>
+		    <div class="col-sm-4">
+				<div class="control">
+					<input type="file" id="file-input" /> Load program<br>
+					<button type="button" class="btn btn-start">Start</button> 
+					<button type="button" class="btn btn-pause">Pause</button> 
+					<button type="button" class="btn btn-stop">Stop</button> <br>
+					<button type="button" class="btn btn-step">Step</button>
+				</div>
+		    </div>
+		</div>
+	    	<div class="row">
+	    		<div class="col-sm-8 program">
+					<table class="table table-striped table-condensed debugger-program">
+						<thead>
+						<tr>
+							<th>@</th>
+							<th>Instruction</th>
+							<th>Description</th>
+						</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+				<div class="col-sm-4">
+					<h4>Registers</h4>
+					<ul class="registers">
+						<li>Timer Delay: <span class="timer-delay"></span></li>
+						<li>Sound Delay: <span class="sound-delay"></span></li>
+						<li><b>V[0]</b> <span class="v0"></span></li>
+						<li><b>V[1]</b> <span class="v1"></span></li>
+						<li><b>V[2]</b> <span class="v2"></span></li>
+						<li><b>V[3]</b> <span class="v3"></span></li>
+						<li><b>V[4]</b> <span class="v4"></span></li>
+						<li><b>V[5]</b> <span class="v5"></span></li>
+						<li><b>V[6]</b> <span class="v6"></span></li>
+						<li><b>V[7]</b> <span class="v7"></span></li>
+						<li><b>V[8]</b> <span class="v8"></span></li>
+						<li><b>V[9]</b> <span class="v9"></span></li>
+						<li><b>VA</b> <span class="v10"></span></li>
+						<li><b>VB</b> <span class="v11"></span></li>
+						<li><b>VC</b> <span class="v12"></span></li>
+						<li><b>VD</b> <span class="v13"></span></li>
+						<li><b>VE</b> <span class="v14"></span></li>
+						<li><b>VF</b> <span class="v14"></span></li>
+						<li><b>I</b> <span class="I"></span></li>
+					</ul>
+				</div>
+			</div>
+	    </div>
+	</div>
+    </body>
+    <script type="text/javascript" src="js/main.min.js"></script>
+</html>

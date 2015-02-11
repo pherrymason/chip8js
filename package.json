@@ -1,0 +1,22 @@
+{
+	"name"    : "Chip8-JS",
+	"version" : "0.0.1",
+	"description" : "Build app",
+	"repository" : {
+		"type" : "git"
+		},
+	"dependencies" : {
+		"grunt-webpack"		  	: "*",
+		"webpack"             	: "*",
+		"imports-loader"      	: "*",
+		"css-loader"			: "0.6.x",
+		"less-loader"			: "*",
+		"style-loader"			: "0.6.x",
+		"url-loader"			: "0.5.x",
+		"grunt"               	: "0.4.*",
+		"grunt-contrib-clean" 	: "0.5.*",
+		"grunt-shell"         	: "0.6.1",
+		"lodash"			  	: "*",
+		"grunt-bower-task"		: "*"
+	}
+}
