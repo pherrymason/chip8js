@@ -8,6 +8,7 @@ _ = require('underscore'),
 
 Keypad = function(keypad){
 	this.keypad = keypad;
+	this.listenting = false;
 	this.map = [
 	//	0 	1 	2 	3 
 		90, 80, 67, 86,
@@ -29,8 +30,11 @@ Keypad.prototype = _.extend(Keypad.prototype,Backbone.Events);
 //var p = Keypad.prototype;
 
 Keypad.prototype.listen = function(){
-	document.addEventListener('keydown', this._keydown.bind(this));
-	document.addEventListener('keyup', this._keyup.bind(this));
+	if (!this.listening){
+		document.addEventListener('keydown', this._keydown.bind(this));
+		document.addEventListener('keyup', this._keyup.bind(this));
+		this.listening = true;
+	}
 };
 
 Keypad.prototype.ignore = function(){
@@ -41,10 +45,9 @@ Keypad.prototype.ignore = function(){
 Keypad.prototype._keydown = function(event){
 	var key = event.keyCode,
 	index = this.map.indexOf(key);
+
 	if (index!=-1){
-		this.keypad[index] = 1;
-		console.log(this.keypad);
-		this.trigger('keypress',this.keypad);
+		this.keypress(index);
 	}
 };
 
@@ -53,10 +56,21 @@ Keypad.prototype._keyup = function(event){
 	index = this.map.indexOf(key);
 
 	if (index!=-1){
-		this.keypad[index] = 0;
-		console.log(this.keypad);
-		this.trigger('keypress',this.keypad);
+		this.keyup(index);
 	}
+};
+
+
+Keypad.prototype.keypress = function(key){
+	this.keypad[key] = 1;
+	console.log(this.keypad);
+	this.trigger('keypress',this.keypad);
+};
+
+Keypad.prototype.keyup = function(key){
+	this.keypad[key] = 0;
+	console.log(this.keypad);
+	this.trigger('keyup',this.keypad);
 };
 
 module.exports = Keypad;

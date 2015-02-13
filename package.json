@@ -6,17 +6,15 @@
 		"type" : "git"
 		},
 	"dependencies" : {
-		"grunt-webpack"		  	: "*",
-		"webpack"             	: "*",
-		"imports-loader"      	: "*",
-		"css-loader"			: "0.6.x",
-		"less-loader"			: "*",
-		"style-loader"			: "0.6.x",
-		"url-loader"			: "0.5.x",
-		"grunt"               	: "0.4.*",
-		"grunt-contrib-clean" 	: "0.5.*",
-		"grunt-shell"         	: "0.6.1",
+        "react"                 : "^0.12.1",
 		"lodash"			  	: "*",
+        "webpack"               : "*",
+        "imports-loader"        : "*",
+        "jsx-loader"            : "^0.12.0",
+        "grunt"                 : "0.4.*",
+        "grunt-webpack"         : "*",
+        "grunt-contrib-clean"   : "0.5.*",
+        "grunt-shell"           : "0.6.1",
 		"grunt-bower-task"		: "*"
 	}
 }

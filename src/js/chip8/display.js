@@ -2,8 +2,8 @@
 
 
 var
-Display = function(canvas,options){
-	this.canvas = canvas;
+Display = function(selectorID,options){
+	this.canvas = document.getElementById(selectorID);
 	this.context= this.canvas.getContext('2d');
 
 	this.width = 64;

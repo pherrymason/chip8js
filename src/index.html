@@ -38,53 +38,34 @@
 		    	<canvas id="screen" width="320" height="160"></canvas>
 		    </div>
 		    <div class="col-sm-4">
-				<div class="control">
-					<input type="file" id="file-input" /> Load program<br>
-					<button type="button" class="btn btn-start">Start</button> 
-					<button type="button" class="btn btn-pause">Pause</button> 
-					<button type="button" class="btn btn-stop">Stop</button> <br>
-					<button type="button" class="btn btn-step">Step</button>
+				<div class="keypad">
+					<button type="button" class="btn btn-xs btn-1" data-btn="1">1</button>
+					<button type="button" class="btn btn-xs btn-2" data-btn="2">2</button>
+					<button type="button" class="btn btn-xs btn-3" data-btn="3">3</button>
+					<button type="button" class="btn btn-xs btn-c" data-btn="c">c</button>
+					<br>
+
+					<button type="button" class="btn btn-xs btn-4" data-btn="4">4</button>
+					<button type="button" class="btn btn-xs btn-5" data-btn="5">5</button>
+					<button type="button" class="btn btn-xs btn-6" data-btn="6">6</button>
+					<button type="button" class="btn btn-xs btn-d" data-btn="d">d</button>
+					<br>
+
+					<button type="button" class="btn btn-xs btn-7" data-btn="7">7</button>
+					<button type="button" class="btn btn-xs btn-8" data-btn="8">8</button>
+					<button type="button" class="btn btn-xs btn-9" data-btn="9">9</button>
+					<button type="button" class="btn btn-xs btn-e" data-btn="e">e</button>
+					<br>
+
+					<button type="button" class="btn btn-xs btn-a" data-btn="a">a</button>
+					<button type="button" class="btn btn-xs btn-0" data-btn="0">0</button>
+					<button type="button" class="btn btn-xs btn-b" data-btn="b">b</button>
+					<button type="button" class="btn btn-xs btn-f" data-btn="d">f</button>
+					<br>
 				</div>
 		    </div>
 		</div>
-	    	<div class="row">
-	    		<div class="col-sm-8 program">
-					<table class="table table-striped table-condensed debugger-program">
-						<thead>
-						<tr>
-							<th>@</th>
-							<th>Instruction</th>
-							<th>Description</th>
-						</tr>
-						</thead>
-						<tbody></tbody>
-					</table>
-				</div>
-				<div class="col-sm-4">
-					<h4>Registers</h4>
-					<ul class="registers">
-						<li>Timer Delay: <span class="timer-delay"></span></li>
-						<li>Sound Delay: <span class="sound-delay"></span></li>
-						<li><b>V[0]</b> <span class="v0"></span></li>
-						<li><b>V[1]</b> <span class="v1"></span></li>
-						<li><b>V[2]</b> <span class="v2"></span></li>
-						<li><b>V[3]</b> <span class="v3"></span></li>
-						<li><b>V[4]</b> <span class="v4"></span></li>
-						<li><b>V[5]</b> <span class="v5"></span></li>
-						<li><b>V[6]</b> <span class="v6"></span></li>
-						<li><b>V[7]</b> <span class="v7"></span></li>
-						<li><b>V[8]</b> <span class="v8"></span></li>
-						<li><b>V[9]</b> <span class="v9"></span></li>
-						<li><b>VA</b> <span class="v10"></span></li>
-						<li><b>VB</b> <span class="v11"></span></li>
-						<li><b>VC</b> <span class="v12"></span></li>
-						<li><b>VD</b> <span class="v13"></span></li>
-						<li><b>VE</b> <span class="v14"></span></li>
-						<li><b>VF</b> <span class="v14"></span></li>
-						<li><b>I</b> <span class="I"></span></li>
-					</ul>
-				</div>
-			</div>
+            <div id="debugger"></div>
 	    </div>
 	</div>
     </body>
