@@ -9,7 +9,9 @@ $       = require('jquery'),
 Chip8   = require('./chip8/chip8'),
 vm		= new Chip8({
     displayID : 'screen',
-    debuggerID: 'debugger'
+    debuggerID: 'debugger',
+
+    debugDisplay: false
 });
 
 $('.keypad').on('click', '.btn', function(event){

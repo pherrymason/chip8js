@@ -160,16 +160,28 @@ Debugger.prototype.opcodeDescription = function(opcode,I){
             return "Cxkk - Set V" + xHex + " = random byte AND " + kkHex;
         case 0xd000:
             return "Dxyn - Draw sprite in I..I+" + n + " at (V" + xHex + ",V" + yHex + ")";
+
+        case 0xE000:
+            switch (opcode & 0x0FF) {
+                case 0x9E: 
+                    return "E09E - Skips the next instruction if the key stored in V"+xHex+" is pressed.";
+
+                case 0xA1:
+                    return "E0A1 - Skips the next instruction if the key stored in V"+xHex+" is pressed.";
+            }
+            break;
+
+
         case 0xF000:
             switch (opcode & 0x00FF) {
                 case 0xF01E:
                     return "Fx1E - Set I = I + V" + xHex;
 
                 case 0x07:
-                        return 'sets V[X] the value of timer delay.';
+                    return 'sets V[X] the value of timer delay.';
 
                 case 0x0A:
-                        return 'Waits for keypress.';
+                    return 'Waits for keypress.';
 
                 case 0x15:
                         return 'Sets the delay timer to V[X].';
@@ -242,8 +254,6 @@ Debugger.prototype.onFileSelected = function(event) {
     reader = new FileReader();
     reader.onload = function(e){
         that.trigger('programLoaded', new Uint8Array(e.target.result));
-        // vm.loadProgram(contents);
-        // fillProgramTable();
     };
     reader.readAsArrayBuffer(file);
 };
