@@ -11,16 +11,16 @@ Display = function(selectorID,options){
     };
 
     this.options= _.extend({},defaultOptions,options);
-	this.canvas = document.getElementById(selectorID);
-	this.context= this.canvas.getContext('2d');
+    this.canvas = document.getElementById(selectorID);
+    this.context= this.canvas.getContext('2d');
 
-	this.width = 64;
-	this.height= 32;
+    this.width = 64;
+    this.height= 32;
 
-	this.scaleX = this.canvas.width / this.width;
-	this.scaleY = this.canvas.height/ this.height;
+    this.scaleX = this.canvas.width / this.width;
+    this.scaleY = this.canvas.height/ this.height;
 
-	this.clear();
+    this.clear();
 };
 
 
@@ -28,11 +28,10 @@ Display = function(selectorID,options){
  * Clears screen
  */
 Display.prototype.clear = function(){
-	this.pixels = new Array(this.width*this.height);
-console.log('clear');
-	for (var i=0; i<this.width*this.height;i++){
-		this.pixels[i] = 0;
-	}
+    this.pixels = new Array(this.width*this.height);
+    for (var i=0; i<this.width*this.height;i++){
+        this.pixels[i] = 0;
+    }
 
     if (this.options.debug){
         var turn = true;
@@ -59,23 +58,23 @@ console.log('clear');
  */
 Display.prototype.draw = function(x,y){
 
-	if (x>this.width){
-		x-= this.width;
-	}
-	else if (x<0){
-		x+= this.width;
-	}
+    if (x>this.width){
+        x-= this.width;
+    }
+    else if (x<0){
+        x+= this.width;
+    }
 
-	if (y>this.height){
-		y-= this.height;
-	}
-	else if (y<0){
-		y+= this.height; 
-	}
+    if (y>this.height){
+        y-= this.height;
+    }
+    else if (y<0){
+        y+= this.height; 
+    }
 
 
-	var active = false;
-	this.pixels[(y*this.width)+x]^= 1;
+    var active = false;
+    this.pixels[(y*this.width)+x]^= 1;
     active = this.pixels[ (y*this.width)+x] ^ 1;
 
     if (this.options.debug) {
@@ -92,11 +91,8 @@ Display.prototype.draw = function(x,y){
 
 
 Display.prototype.drawColor = function(x,y,color) {
-   //console.log('_drawColor('+x+'->'+this.scaleX+','+y+'->'+this.scaleY+','+color);
     this.context.fillStyle = color;
     this.context.fillRect(x*this.scaleX, y*this.scaleY, this.scaleX, this.scaleY);
 };
-
-
 
 module.exports = Display;

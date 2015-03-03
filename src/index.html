@@ -8,66 +8,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="bootstrap.min.css" media="all">
         <style>
-			body{
-				padding: 20px;
-			}
-	        canvas{
-	        	display : block;
-	        	background : #FFF;
-	        	width  : calc(64px*5);
-	        	height : calc(32px*5);
+            body{
+                padding: 20px;
+            }
+            canvas{
+                display : block;
+                background : #FFF;
+                width  : calc(64px*5);
+                height : calc(32px*5);
+            }
 
-	        /*	margin : 0 auto;*/
-	        }
+            tr.current{
+                color : #FF0000;
+            }
 
-	        tr.current{
-	        	color : #FF0000;
-	        }
-
-	        .program{
-	        	max-height:550px;
-	        	height    : 300px;
-	        	overflow-y:scroll;
-	        }
+            .program{
+                max-height:550px;
+                height    : 300px;
+                overflow-y:scroll;
+            }
         </style>
     </head>
     <body>
     <div class="container">
-    	<div class="row">
-    		<div class="col-sm-8">
-		    	<canvas id="screen" width="320" height="160"></canvas>
-		    </div>
-		    <div class="col-sm-4">
-				<div class="keypad">
-					<button type="button" class="btn btn-xs btn-1" data-btn="1">1</button>
-					<button type="button" class="btn btn-xs btn-2" data-btn="2">2</button>
-					<button type="button" class="btn btn-xs btn-3" data-btn="3">3</button>
-					<button type="button" class="btn btn-xs btn-c" data-btn="c">c</button>
-					<br>
+        <div class="row">
+            <div class="col-sm-8">
+                <canvas id="screen" width="320" height="160"></canvas>
+            </div>
+            <div class="col-sm-4">
+                <div class="keypad">
+                    <button type="button" class="btn btn-xs btn-1" data-btn="1">1</button>
+                    <button type="button" class="btn btn-xs btn-2" data-btn="2">2</button>
+                    <button type="button" class="btn btn-xs btn-3" data-btn="3">3</button>
+                    <button type="button" class="btn btn-xs btn-c" data-btn="c">c</button>
+                    <br>
 
-					<button type="button" class="btn btn-xs btn-4" data-btn="4">4</button>
-					<button type="button" class="btn btn-xs btn-5" data-btn="5">5</button>
-					<button type="button" class="btn btn-xs btn-6" data-btn="6">6</button>
-					<button type="button" class="btn btn-xs btn-d" data-btn="d">d</button>
-					<br>
+                    <button type="button" class="btn btn-xs btn-4" data-btn="4">4</button>
+                    <button type="button" class="btn btn-xs btn-5" data-btn="5">5</button>
+                    <button type="button" class="btn btn-xs btn-6" data-btn="6">6</button>
+                    <button type="button" class="btn btn-xs btn-d" data-btn="d">d</button>
+                    <br>
 
-					<button type="button" class="btn btn-xs btn-7" data-btn="7">7</button>
-					<button type="button" class="btn btn-xs btn-8" data-btn="8">8</button>
-					<button type="button" class="btn btn-xs btn-9" data-btn="9">9</button>
-					<button type="button" class="btn btn-xs btn-e" data-btn="e">e</button>
-					<br>
+                    <button type="button" class="btn btn-xs btn-7" data-btn="7">7</button>
+                    <button type="button" class="btn btn-xs btn-8" data-btn="8">8</button>
+                    <button type="button" class="btn btn-xs btn-9" data-btn="9">9</button>
+                    <button type="button" class="btn btn-xs btn-e" data-btn="e">e</button>
+                    <br>
 
-					<button type="button" class="btn btn-xs btn-a" data-btn="a">a</button>
-					<button type="button" class="btn btn-xs btn-0" data-btn="0">0</button>
-					<button type="button" class="btn btn-xs btn-b" data-btn="b">b</button>
-					<button type="button" class="btn btn-xs btn-f" data-btn="d">f</button>
-					<br>
-				</div>
-		    </div>
-		</div>
+                    <button type="button" class="btn btn-xs btn-a" data-btn="a">a</button>
+                    <button type="button" class="btn btn-xs btn-0" data-btn="0">0</button>
+                    <button type="button" class="btn btn-xs btn-b" data-btn="b">b</button>
+                    <button type="button" class="btn btn-xs btn-f" data-btn="d">f</button>
+                    <br>
+                </div>
+            </div>
+        </div>
             <div id="debugger"></div>
-	    </div>
-	</div>
+        </div>
+    </div>
     </body>
     <script type="text/javascript" src="js/main.min.js"></script>
 </html>
