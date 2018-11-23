@@ -12,6 +12,7 @@ export default class CPU {
 
     reset() {
         this.memory.reset();
+        this.stop();
 
         // 16 CPU registers.
         this.V = new Uint8Array(new ArrayBuffer(16));

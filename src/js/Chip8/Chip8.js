@@ -74,33 +74,9 @@ export default class Chip8 {
         this.cpu.reset();
         this.keypad.reset();
 
-        this.V = new Uint8Array(new ArrayBuffer(16));     // 16 CPU registers.
-
-        this.I = 0;                                       // Address register.
-        this.pc = 0x200;                                  // Program conuter starts at 0x200
-
-        this.timerDelay = 0;
-        this.timerSound = 0;
-
-        // Stack
-        // -----
-        // Used to remember the current location before a jump is performed.
-        // Any time program performs a jump or call a subrutine, program counter
-        // is stored in this stack before proceeding.
-        // sp (stack pointer) is used to remember which level in the stack we are.
-        this.stack = [];                  // Stack
-        this.sp = 0;                   // stack pointer
-
-        this.keypadStatus = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];	// Keypad state
-
-
         // flags
         this.draw = false;		// Something has to be drawn on screen.
         this.clearScreen = false;		// Screen needs to be cleared.
-
-        if (this.timer !== null) {
-            clearInterval(this.timer);
-        }
     }
 
     /**
