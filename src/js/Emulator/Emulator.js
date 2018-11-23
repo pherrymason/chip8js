@@ -21,6 +21,10 @@ export default class Emulator extends React.Component {
         this.chip8.start();
     }
 
+    onClickReset(event) {
+        this.chip8.reset();
+    }
+
     componentDidMount() {
         this.chip8 = new Chip8({
             displayID: 'screen'
@@ -34,6 +38,7 @@ export default class Emulator extends React.Component {
             <div>
                 <button className="btn btn-primary" onClick={(e) => this.onClickStart(e)}>Start</button>
                 <button className="btn btn-default" disabled>Pause</button>
+                <button className="btn btn-default" onClick={(e) => this.onClickReset(e)}>Reset</button>
             </div>
         </div>
     }

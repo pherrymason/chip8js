@@ -11,7 +11,7 @@ export default class CPU {
     }
 
     reset() {
-        this.memory.reset();
+        //this.memory.reset();
         this.stop();
 
         // 16 CPU registers.

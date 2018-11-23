@@ -99,8 +99,15 @@ export default class Chip8 {
     }
 
     stop() {
-        clearTimeout(this.timer);
         this.keypad.ignore();
+    }
+
+    reset() {
+        this.cpu.reset();
+        this.keypad.reset();
+        this.display.clear();
+
+        this.start();
     }
 
     pause() {
