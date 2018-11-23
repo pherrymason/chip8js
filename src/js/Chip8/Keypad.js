@@ -18,48 +18,52 @@ export default class Keypad {
             //	12	13	14	15
             49, 50, 51, 52
         ];
+
+        this.reset();
+    }
+
+    reset() {
+        this.keypadStatus = Array(19).fill(0);
     }
 
 	listen() {
         if (!this.listening) {
-            document.addEventListener('keydown', this._keydown.bind(this));
-            document.addEventListener('keyup', this._keyup.bind(this));
+            document.addEventListener('keydown', () => this._keydown);
+            document.addEventListener('keyup', () => this._keyup);
             this.listening = true;
         }
     }
 
     ignore() {
-        document.removeEventListener('keydown', this._keydown.bind(this));
-        document.removeEventListener('keyup', this._keyup.bind(this));
+        document.removeEventListener('keydown', () => this._keydown);
+        document.removeEventListener('keyup', () => this._keyup);
     }
 
     _keydown(event) {
-        var key = event.keyCode,
-            index = this.map.indexOf(key);
+        const key = event.keyCode;
+        const index = this.map.indexOf(key);
         console.log(key);
-        if (index != -1) {
+        if (index !== -1) {
             this.keypress(index);
         }
     }
 
     _keyup(event) {
-        var key = event.keyCode,
-            index = this.map.indexOf(key);
+        const key = event.keyCode;
+        const index = this.map.indexOf(key);
 
-        if (index != -1) {
+        if (index !== -1) {
             this.keyup(index);
         }
     }
 
     keypress(key) {
         this.keypad[key] = 1;
-        //console.log(this.keypad);
         this.trigger('keypress', this.keypad);
     }
 
    	keyup(key) {
         this.keypad[key] = 0;
-        //console.log(this.keypad);
         this.trigger('keyup', this.keypad);
     }
 }
