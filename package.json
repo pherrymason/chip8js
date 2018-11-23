@@ -6,7 +6,7 @@
         "type": "git"
     },
     "scripts": {
-        "build": "webpack --mode development"
+        "dev": "webpack --mode development --watch --progress"
     },
     "dependencies": {
         "imports-loader": "*",
