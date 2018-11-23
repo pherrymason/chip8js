@@ -1,5 +1,6 @@
 Roms
-bower_components
+node_modules
 *.zip
 others
 main.min.js
+.idea

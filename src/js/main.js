@@ -2,17 +2,18 @@
  * Chip8 Emulator for JS
  * ---------------------
  */
-"use strict";
+import React from "react";
+import ReactDOM from "react-dom";
+import Emulator from "./Emulator/Emulator";
 
-var
-$       = require('jquery'),
-Chip8   = require('./chip8/chip8'),
-vm      = new Chip8({
+
+var $       = require('jquery');
+/*var vm      = new Chip8({
     displayID : 'screen',
     debuggerID: 'debugger',
     debugDisplay: false
 });
-
+*/
 $('.keypad').on('click', '.btn', function(event){
     var $btn = $(event.currentTarget);
     if ($btn.hasClass('active')){
@@ -24,3 +25,20 @@ $('.keypad').on('click', '.btn', function(event){
         $btn.addClass('active');
     }
 });
+
+if (!compatibilityCheck()) {
+
+} else {
+    ReactDOM.render(<Emulator/>, document.getElementById('emulator'));
+}
+
+
+
+function compatibilityCheck() {
+    if (typeof window.FileReader !== 'function') {
+        alert("The file API isn't supported on this browser yet.");
+        return false;
+    }
+
+    return true;
+}
