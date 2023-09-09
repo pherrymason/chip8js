@@ -1,5 +1,9 @@
 Roms
-bower_components
+node_modules
 *.zip
 others
 main.min.js
+.idea
+.DS_Store
+*.map
+package-lock.json
