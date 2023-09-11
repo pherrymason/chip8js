@@ -14,7 +14,6 @@ _ = require('underscore'),
  * @param Boolean debug.
  */
 Chip8 = function(options){
-
     var
     Keypad		= require('./keypad'),
     Display     = require('./display'),
@@ -198,6 +197,7 @@ p._tick = function(){
 
     this.debug.updateAssembler(this.pc, this.I);
     this.debug.updateMemory(this.V,this.I,this.timerDelay,this.timerSound);
+    this.debug.log(this.pc, this.I);
     this._executeOpcode(opcode);
 };
 

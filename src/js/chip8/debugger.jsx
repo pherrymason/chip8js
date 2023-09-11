@@ -34,6 +34,14 @@ Debugger    = function(debugID){
 Backbone.$ = $;
 Debugger.prototype = _.extend(Debugger.prototype,Backbone.Events);
 
+Debugger.prototype.log = function (programCounter,I) {
+    let opcode = (this.memory[programCounter] << 8) + this.memory[programCounter];
+    console.log(
+        this.hex(programCounter),
+        this.opcodeDescription(opcode,I)
+    );
+}
+
 Debugger.prototype.updateAssembler = function(programCounter,I){
 
     var
