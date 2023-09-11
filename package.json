@@ -7,12 +7,6 @@
     },
     "dependencies": {
         "backbone": "~1.1.2",
-        "grunt": "0.4.*",
-        "grunt-bower-task": "*",
-        "grunt-contrib-clean": "0.5.*",
-        "grunt-shell": "0.6.1",
-        "grunt-webpack": "*",
-        "imports-loader": "*",
         "jquery": "~2.1.3",
         "jsx-loader": "^0.12.0",
         "lodash": "*",
