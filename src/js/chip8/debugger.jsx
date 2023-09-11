@@ -167,7 +167,7 @@ Debugger.prototype.opcodeDescription = function(opcode,I){
                     return "E09E - Skips the next instruction if the key stored in V"+xHex+" is pressed.";
 
                 case 0xA1:
-                    return "E0A1 - Skips the next instruction if the key stored in V"+xHex+" is pressed.";
+                    return "E0A1 - Skips the next instruction if the key stored in V"+xHex+" is not pressed.";
             }
             break;
 
